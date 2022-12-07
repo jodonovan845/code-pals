@@ -2,6 +2,9 @@ const path = require('path');
 const express = require('express');
 const { send } = require('process')
 
+// import controllers
+const peopleController = require('./controllers/peopleController.js');
+
 const app = express();
 const PORT = 8080;
 
@@ -12,4 +15,13 @@ app.use(express.json())
 app.use(express.static('client'));
 
 // handle get request to people
-app.get('/', )
+app.get('/', peopleController.addPerson, (req,res) => {
+    res.status(200).json(res.locals.test);
+})
+
+
+
+// start server
+app.listen(PORT, () => {
+    console.log(`Server listening on port: ${PORT}`)
+})
