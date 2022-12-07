@@ -9,6 +9,15 @@ const pool = new Pool({
     connectionString: PG_URI
 });
 
+/*
+CREATE TABLE people (
+  person_id serial NOT NULL,
+  first_name varchar,
+  last_name varchar,
+  points integer
+)
+*/
+
 module.exports = {
     query: (text, params, callback) => {
         console.log('executed query', text);
