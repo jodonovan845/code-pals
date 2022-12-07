@@ -15,8 +15,8 @@ app.use(express.json())
 app.use(express.static('client'));
 
 // handle get request to people
-app.get('/', peopleController.addPerson, (req,res) => {
-    res.status(200).json(res.locals.test);
+app.get('/', peopleController.getPeople, (req,res) => {
+    res.status(200).json(res.locals.everyone);
 })
 
 
