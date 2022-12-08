@@ -109,5 +109,27 @@ peopleController.downScore = async (req,res,next) => {
         }
 }
 
+peopleController.deletePerson = async (req,res,next) => {
+    try {
+        // GETTING ID OF PERSON
+        const person_id = req.params.id;
+        
+        // DELETING PERSON
+        const sqlQuery2 = `
+        DELETE FROM people
+        WHERE person_id = $1
+        `;
+        const updateScoreQueryArray = [person_id]
+        await db.query(sqlQuery2, updateScoreQueryArray);
+        return next();
+        // ERROR HANDLING
+        } catch (err) {
+            next ({
+                log: `Error in peopleController.deletePerson. Details: ${err}`,
+                message: { err: 'An error occurred in peopleController.deletePerson' },
+            })
+        }
+}
+
 //export module
 module.exports = peopleController;

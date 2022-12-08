@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    color: grey;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.head {
+    border: 10px solid red;
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+.rankingsArea {
+    border: 10px solid red;
+    height: 50vw;
+}

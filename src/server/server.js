@@ -33,6 +33,10 @@ app.patch('/downscore/:id', peopleController.downScore, (req, res) => {
     res.status(200).json();
 })
 
+app.delete('/delete/:id', peopleController.deletePerson, (req, res) => {
+    res.status(200).json();
+})
+
 // 404 error handling
 app.use('/', (req,res) => {
     res.status(404).json()
