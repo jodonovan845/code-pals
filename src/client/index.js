@@ -4,16 +4,7 @@ import { render } from 'react-dom';
 import RankZone from './Components/RankZone.js';
 
 class App extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            personInfo: {
-                firstname: '',
-                lastname: '',
-                points: 0
-            }
-        }
-    }
+
 
     render() {
         return [
@@ -22,13 +13,7 @@ class App extends Component {
         ]
     }
 
-    addPoints () {
 
-    }
-
-    removePoints () {
-
-    }
 }
 
 render(<App />, document.querySelector('#root'));

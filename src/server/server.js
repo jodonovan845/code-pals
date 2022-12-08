@@ -1,12 +1,16 @@
 const path = require('path');
 const express = require('express');
 const { send } = require('process')
+const cors = require('cors');
 
 // import controllers
 const peopleController = require('./controllers/peopleController.js');
 
 const app = express();
 const PORT = 8080;
+
+// use cors
+app.use(cors());
 
 // handle parsing of request body
 app.use(express.json())
@@ -16,6 +20,11 @@ app.use(express.static('client'));
 
 // handle get request to people
 app.get('/', peopleController.getPeople, (req,res) => {
+    res.set({
+        "Access-Control-Allow-Origin" : "*", 
+        "Access-Control-Allow-Credentials" : true 
+    });
+    console.log(res.locals.everyone)
     res.status(200).json(res.locals.everyone);
 })
 
