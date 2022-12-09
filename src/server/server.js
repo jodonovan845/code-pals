@@ -30,7 +30,8 @@ app.get('/', peopleController.getPeople, (req,res) => {
 
 // handle post request to people
 app.post('/student', peopleController.addPerson, (req, res) => {
-    res.status(200).json();
+    console.log('THE ID IN THE SERVER CB: ', res.locals.id)
+    res.status(200).json(res.locals.id);
 })
 
 // handle patch requests to change score

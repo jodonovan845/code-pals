@@ -5,13 +5,38 @@ body {
 }
 
 .head {
-    border: 10px solid red;
+    // border: 10px solid red;
     font-size: 75px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    color: gold;
 }
 
 .rankingsArea {
-    border: 10px solid red;
-    height: 50vw;
+    // border: 10px solid red;
+    height: auto;
+}
+
+.boxOfPeople {
+    // border: 2px solid whitesmoke;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.individual {
+    border: 2px solid whitesmoke;
+    height: 150px;
+    width: 400px;
+}
+
+.name {
+    font-size: 40px;
+    color: gold;
+}
+
+.addAndSub {
+    padding-top: 5px;
+    padding-bottom: 20px;
 }

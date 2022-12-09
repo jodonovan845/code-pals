@@ -8,12 +8,12 @@ class App extends Component {
 
     render() {
         return [
-            <h1 className='head'>POWER RANKINGS</h1>,
-            <RankZone />
+            <h1 className='head' key={'head'}>POWER RANKINGS</h1>,
+            <RankZone key={'rank'}/>
         ]
     }
 
 
 }
 
-render(<App />, document.querySelector('#root'));
+render(<App key={'app'}/>, document.querySelector('#root'));
